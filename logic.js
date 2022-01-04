@@ -1,23 +1,27 @@
 const collaps = document.querySelector(".button");
 const collapsBird = document.querySelector(".buttonBird");
 const collapsCat = document.querySelector(".buttonCat");
-
 const content = document.querySelector(".contentDog")
 const contentCat = document.querySelector(".contentCat")
 const contentBird = document.querySelector(".contentBird")
 
-collaps.addEventListener("click", function() {
-    
-    content.classList.toggle("active");
+collaps.addEventListener("click", () => {collapse(collaps,content)})
 
-  });
-  collapsCat.addEventListener("click", function() {
-    
-    contentCat.classList.toggle("active");
+collapsCat.addEventListener("click", () => {collapse(collapsCat,contentCat)})
 
-  });
-  collapsBird.addEventListener("click", function() {
-    
-    contentBird.classList.toggle("active");
+collapsBird.addEventListener("click", () => {collapse(collapsBird,contentBird)})
 
-  });
+
+function collapse(button, content){
+
+  content.classList.toggle("active");
+
+  if(button.innerHTML == "+") {
+
+    button.innerHTML = "-";
+
+  } else {
+    button.innerHTML = "+";
+  }
+
+}
